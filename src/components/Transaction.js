@@ -4,7 +4,7 @@ import { GlobalContext } from '../context/GlobalState';
 export const Transaction = ({ transaction }) => {
   const { deleteTransaction } = useContext(GlobalContext);
 
-// Jos positiivinen numero lisää "+" eteen, jos negatiivinen lisää ei mitään, koska tietokanna arvossa on "-" summan edessä mikäli summa on negatiivinen mutta ei mitään jos summa on positiivinen 
+// If the number is positive add "+" in front of the transaction amount, otherwise add nothing as there's already a "-" in the data for negative transactions
   const sign = transaction.amount < 0 ? '' : '+';
 
   return (
